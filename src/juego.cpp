@@ -18,6 +18,12 @@ Juego::Juego()
     cout << "\tNivel 3: palabras de más de 11 letras.\n";
     cin >> m_nivel;
 
+    while(m_nivel > 3 || m_nivel < 1)
+    {
+        cout << "Nivel incorrecto " << nombre << endl;
+        cin >> m_nivel;
+    }
+
     cout << nombre << ", cuantos intentos queres?\n";
     cin >> m_intentos;
 

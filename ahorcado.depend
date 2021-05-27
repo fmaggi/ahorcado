@@ -4,20 +4,19 @@
 
 1622116398 /home/fran/Documents/facultad/prog/ahorcado/src/diccionario.h
 
-1622118272 source:/home/fran/Documents/facultad/prog/ahorcado/src/jugador.cpp
+1622121296 source:/home/fran/Documents/facultad/prog/ahorcado/src/jugador.cpp
 	"jugador.h"
 
-1622118118 /home/fran/Documents/facultad/prog/ahorcado/src/jugador.h
+1622121298 /home/fran/Documents/facultad/prog/ahorcado/src/jugador.h
 
-1622118542 source:/home/fran/Documents/facultad/prog/ahorcado/src/main.cpp
+1622120285 source:/home/fran/Documents/facultad/prog/ahorcado/src/main.cpp
 	"juego.h"
-	<iostream>
 
-1622119855 /home/fran/Documents/facultad/prog/ahorcado/src/juego.h
+1622121576 /home/fran/Documents/facultad/prog/ahorcado/src/juego.h
 	"jugador.h"
 	"diccionario.h"
 
-1622119940 source:/home/fran/Documents/facultad/prog/ahorcado/src/juego.cpp
+1622121768 source:/home/fran/Documents/facultad/prog/ahorcado/src/juego.cpp
 	"juego.h"
 	<cstring>
 	<iostream>
