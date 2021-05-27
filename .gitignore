@@ -1,4 +1,10 @@
 bin/**
+obj/**
+
+*.depend
+
+# ejecutable
+ahorcado
 
 # Prerequisites
 *.d

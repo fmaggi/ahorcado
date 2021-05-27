@@ -8,7 +8,6 @@ public:
     Jugador(const char* nombre);
 
     bool probarLetra(char letra);
-    void arriesgarPalabra();
 private:
     char m_letrasArriesgadas[26];
     const char* m_nombre;
