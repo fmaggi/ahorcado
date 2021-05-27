@@ -24,7 +24,7 @@ Juego::Juego()
         cin >> m_nivel;
     }
 
-    cout << nombre << ", cuantos intentos queres?\n";
+    cout << cuantos intentos queres?\n";
     cin >> m_intentos;
 
     m_estaCorriendo = true;
