@@ -20,7 +20,12 @@ void Juego::init(int nivel, int intentos, const char* nombre)
 
     m_jugador = new Jugador(nombre, intentos);
 
-    strcpy(m_palabra, m_dic.getPalabra(nivel));
+    //strcpy(m_palabra, m_dic.getPalabra(nivel));
+}
+
+Juego::~Juego()
+{
+    delete m_jugador;
 }
 
 void Juego::actualizar()

@@ -10,6 +10,8 @@ public:
     Juego();
     Juego(int nivel, int intentos, const char* nombre);
 
+    ~Juego();
+
     void actualizar();
 
     bool estaCorriendo();

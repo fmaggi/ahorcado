@@ -9,11 +9,11 @@
 
 1622118118 /home/fran/Documents/facultad/prog/ahorcado/src/jugador.h
 
-1622118223 source:/home/fran/Documents/facultad/prog/ahorcado/src/main.cpp
+1622118542 source:/home/fran/Documents/facultad/prog/ahorcado/src/main.cpp
 	"juego.h"
 	<iostream>
 
-1622118118 /home/fran/Documents/facultad/prog/ahorcado/src/juego.h
+1622119169 /home/fran/Documents/facultad/prog/ahorcado/src/juego.h
 	"jugador.h"
 	"diccionario.h"
 
