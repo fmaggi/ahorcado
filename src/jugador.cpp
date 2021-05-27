@@ -4,7 +4,7 @@ Jugador::Jugador()
 {
 }
 
-Jugador::Jugador(const char* nombre, int intentos)
+Jugador::Jugador(const char* nombre)
 {
 }
 

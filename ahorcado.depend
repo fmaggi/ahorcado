@@ -13,11 +13,12 @@
 	"juego.h"
 	<iostream>
 
-1622119169 /home/fran/Documents/facultad/prog/ahorcado/src/juego.h
+1622119855 /home/fran/Documents/facultad/prog/ahorcado/src/juego.h
 	"jugador.h"
 	"diccionario.h"
 
-1622118149 source:/home/fran/Documents/facultad/prog/ahorcado/src/juego.cpp
+1622119940 source:/home/fran/Documents/facultad/prog/ahorcado/src/juego.cpp
 	"juego.h"
+	<cstring>
 	<iostream>
 

@@ -5,14 +5,13 @@ class Jugador
 {
 public:
     Jugador();
-    Jugador(const char* nombre, int intentos);
+    Jugador(const char* nombre);
 
     bool probarLetra(char letra);
     void arriesgarPalabra();
 private:
     char m_letrasArriesgadas[26];
     const char* m_nombre;
-    int m_intentos;
 };
 
 #endif // JUGADOR_H_INCLUDED

@@ -8,7 +8,6 @@ class Juego
 {
 public:
     Juego();
-
     ~Juego();
 
     void actualizar();
@@ -20,8 +19,11 @@ public:
 
 private:
     bool m_estaCorriendo;
+
     int m_nivel;
+    int m_intentos;
     const char* m_palabra;
+
     Jugador* m_jugador;
     Diccionario m_dic;
 };

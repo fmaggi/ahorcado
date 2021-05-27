@@ -6,7 +6,6 @@ using namespace std;
 
 Juego::Juego()
 {
-    int intentos;
     char nombre[20];
 
     cout << "Bienvenido al ahorcado\n";
@@ -20,11 +19,11 @@ Juego::Juego()
     cin >> m_nivel;
 
     cout << nombre << ", cuantos intentos queres?\n";
-    cin >> intentos;
+    cin >> m_intentos;
 
     m_estaCorriendo = true;
 
-    m_jugador = new Jugador(nombre, intentos);
+    m_jugador = new Jugador(nombre);
 
     //strcpy(m_palabra, m_dic.getPalabra(m_nivel));
 }
