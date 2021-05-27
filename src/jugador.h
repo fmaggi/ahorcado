@@ -10,7 +10,7 @@ public:
     bool probarLetra(char letra);
     void arriesgarPalabra();
 private:
-    char m_letrasArriesgadas[27];
+    char m_letrasArriesgadas[26];
     const char* m_nombre;
     int m_intentos;
 };
