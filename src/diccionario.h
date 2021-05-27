@@ -1,0 +1,8 @@
+#ifndef DICCIONARIO_H_INCLUDED
+#define DICCIONARIO_H_INCLUDED
+
+class Diccionario
+{
+}
+
+#endif // DICCIONARIO_H_INCLUDED
