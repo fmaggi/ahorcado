@@ -12,7 +12,7 @@ public:
 
     void actualizar();
 
-    void estaCorriendo();
+    bool estaCorriendo();
     void cerrar();
 
     bool checkLetra(char letra);
@@ -23,7 +23,7 @@ private:
     const char* m_palabra;
     Jugador m_jugador;
     Diccionario m_dic;
-}
+};
 
 
 #endif // JUEGO_H_INCLUDED

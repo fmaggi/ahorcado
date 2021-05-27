@@ -1,11 +1,11 @@
 #ifndef JUGADOR_H_INCLUDED
 #define JUGADOR_H_INCLUDED
 
-class Juagdor
+class Jugador
 {
 public:
     Jugador();
-    Jugador(const char* nombre, intentos);
+    Jugador(const char* nombre, int intentos);
 
     bool probarLetra(char letra);
     void arriesgarPalabra();
@@ -13,6 +13,6 @@ private:
     char m_letrasArriesgadas[27];
     const char* m_nombre;
     int m_intentos;
-}
+};
 
 #endif // JUGADOR_H_INCLUDED

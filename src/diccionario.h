@@ -3,6 +3,7 @@
 
 class Diccionario
 {
-}
+
+};
 
 #endif // DICCIONARIO_H_INCLUDED
