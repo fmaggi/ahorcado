@@ -8,7 +8,6 @@ class Juego
 {
 public:
     Juego();
-    Juego(int nivel, int intentos, const char* nombre);
 
     ~Juego();
 
@@ -25,8 +24,6 @@ private:
     const char* m_palabra;
     Jugador* m_jugador;
     Diccionario m_dic;
-
-    void init(int nivel, int intentos, const char* nombre);
 };
 
 

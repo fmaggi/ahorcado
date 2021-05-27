@@ -5,22 +5,27 @@ using namespace std;
 
 Juego::Juego()
 {
-    init(0, 0, "");
-}
+    int intentos;
+    char nombre[20];
 
-Juego::Juego(int nivel, int intentos, const char* nombre)
-{
-    init(nivel, intentos, nombre);
-}
+    cout << "Bienvenido al ahorcado\n";
+    cout << "Ingrese su nombre\n";
+    cin >> nombre;
 
-void Juego::init(int nivel, int intentos, const char* nombre)
-{
+    cout << nombre << ", que nivel queres jugar?: \n";
+    cout << "\tNivel 1: palabras de hasta 7 letras (inclusive).\n";
+    cout << "\tNivel 2: palabras de 8 a 11 letras (inclusive).\n";
+    cout << "\tNivel 3: palabras de más de 11 letras.\n";
+    cin >> m_nivel;
+
+    cout << nombre << ", cuantos intentos queres?\n";
+    cin >> intentos;
+
     m_estaCorriendo = true;
-    m_nivel = nivel;
 
     m_jugador = new Jugador(nombre, intentos);
 
-    //strcpy(m_palabra, m_dic.getPalabra(nivel));
+    //strcpy(m_palabra, m_dic.getPalabra(m_nivel));
 }
 
 Juego::~Juego()
