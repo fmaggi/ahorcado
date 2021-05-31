@@ -1,11 +1,17 @@
 #include "jugador.h"
+#include <cstring>
 
-Jugador::Jugador()
+using namespace std;
+
+Jugador::Jugador(const string& nombre)
 {
+    m_nombre = nombre;
+    memset(m_letrasArriesgadas, 0, 26);
 }
 
-Jugador::Jugador(const char* nombre)
+string& Jugador::getNombre()
 {
+    return m_nombre;
 }
 
 bool Jugador::probarLetra(char letra)

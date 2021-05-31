@@ -1,14 +1,12 @@
 #include "juego.h"
-#include <cstring>
 #include <iostream>
 
 using namespace std;
 
 Juego::Juego()
 {
-    char nombre[20];
+    string nombre;
 
-    cout << "Bienvenido al ahorcado\n";
     cout << "Ingrese su nombre\n";
     cin >> nombre;
 
@@ -30,17 +28,22 @@ Juego::Juego()
     m_estaCorriendo = true;
 
     m_jugador = new Jugador(nombre);
+    m_dic = new Diccionario(m_nivel);
 
-    //strcpy(m_palabra, m_dic.getPalabra(m_nivel));
+    m_palabra = m_dic->getPalabra();
 }
 
 Juego::~Juego()
 {
     delete m_jugador;
+    delete m_dic;
 }
 
 void Juego::actualizar()
-{
+{   
+    cout << m_jugador->getNombre() << endl;
+    cout << m_palabra << endl;
+    cerrar();
 }
 
 bool Juego::estaCorriendo()

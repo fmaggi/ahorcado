@@ -1,16 +1,21 @@
 #ifndef JUGADOR_H_INCLUDED
 #define JUGADOR_H_INCLUDED
 
+#include <string>
+
+using namespace std;
+
 class Jugador
 {
 public:
-    Jugador();
-    Jugador(const char* nombre);
+    Jugador(const string& nombre);
+
+    string& getNombre();
 
     bool probarLetra(char letra);
 private:
-    char m_letrasArriesgadas[26];
-    const char* m_nombre;
+    bool m_letrasArriesgadas[26];
+    string m_nombre;
 };
 
 #endif // JUGADOR_H_INCLUDED

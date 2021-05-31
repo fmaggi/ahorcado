@@ -1,24 +1,29 @@
 CC=g++
 INC=./src/
 OBJ=./obj/rel/
-BIN=./bin/rel/
 
 TARGET=ahorcado
 
 OBJECTS=$(OBJ)juego.o $(OBJ)jugador.o $(OBJ)diccionario.o $(OBJ)main.o
 
-all: $(TARGET)
+all: dir $(TARGET)
 
 $(OBJ)%.o: $(INC)%.cpp
-	mkdir -p $(OBJ)
-	$(CC) -I $(INC) -o $@ -c $^
+	@echo [CC] $<
+	@$(CC) -I $(INC) -o $@ -c $^
 
 $(TARGET): $(OBJECTS)
-	$(CC) -I $(INC) -o $@ $^
+	@echo [EXE] $@
+	@$(CC) -I $(INC) -o $@ $^
+
+dir:
+	@mkdir -p $(OBJ)
 
 clean:
-	rm -rf $(OBJ) $(TARGET)
+	@echo cleaning
+	@rm -rf ./obj ahorcado
 
-run: $(TARGET)
-	./$(TARGET)
+run: dir $(TARGET)
+	@echo [RUN] $(TARGET)
+	@-./$(TARGET)
 

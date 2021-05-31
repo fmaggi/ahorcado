@@ -1,8 +1,10 @@
+#ifndef JUEGO_H_INCLUDED
+#define JUEGO_H_INCLUDED
+
 #include "jugador.h"
 #include "diccionario.h"
 
-#ifndef JUEGO_H_INCLUDED
-#define JUEGO_H_INCLUDED
+#include <string>
 
 class Juego
 {
@@ -22,10 +24,10 @@ private:
 
     int m_nivel;
     int m_intentos;
-    const char* m_palabra;
+    string m_palabra;
 
     Jugador* m_jugador;
-    Diccionario m_dic;
+    Diccionario* m_dic;
 };
 
 
