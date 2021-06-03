@@ -13,7 +13,15 @@ public:
     string& getNombre();
     int getVidas();
 
-    bool probarLetra(char letra);
+
+    /*
+    *   Checkea si la letra ya fue usada o no por el jugador  
+    *
+    *   @param letra Letra a checkear
+    *   
+    *   @returns true si la letra ya fue usada, false si no 
+    */
+    bool letraUsada(char letra);
 private:
     bool m_letrasArriesgadas[26];
 

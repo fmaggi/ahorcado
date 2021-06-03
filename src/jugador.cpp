@@ -20,7 +20,8 @@ string& Jugador::getNombre()
     return m_nombre;
 }
 
-bool Jugador::probarLetra(char letra)
+bool Jugador::letraUsada(char letra)
 {
-
+    int index = letra - 'a';
+    return !(m_letrasArriesgadas[index]);
 }
