@@ -1,5 +1,6 @@
 #include "juego.h"
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -27,10 +28,13 @@ Juego::Juego()
 
     m_estaCorriendo = true;
 
-    m_jugador = new Jugador(nombre);
+    m_jugador = new Jugador(nombre, m_intentos);
     m_dic = new Diccionario(m_nivel);
 
     m_palabra = m_dic->getPalabra();
+
+    m_palabraOculta = new char[m_palabra.length()];
+    memset(m_palabraOculta, '-', m_palabra.length());
 }
 
 Juego::~Juego()
@@ -39,10 +43,16 @@ Juego::~Juego()
     delete m_dic;
 }
 
+void Juego::mostrar()
+{
+    cout << m_palabraOculta << endl;
+    cout << m_palabra << endl;
+    cout << m_jugador->getVidas() << "/" << m_intentos << endl;
+}
+
 void Juego::actualizar()
 {   
     cout << m_jugador->getNombre() << endl;
-    cout << m_palabra << endl;
     cerrar();
 }
 

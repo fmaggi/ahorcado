@@ -12,6 +12,7 @@ public:
     Juego();
     ~Juego();
 
+    void mostrar();
     void actualizar();
 
     bool estaCorriendo();
@@ -24,7 +25,9 @@ private:
 
     int m_nivel;
     int m_intentos;
+
     string m_palabra;
+    char* m_palabraOculta;
 
     Jugador* m_jugador;
     Diccionario* m_dic;
