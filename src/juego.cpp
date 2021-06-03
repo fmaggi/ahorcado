@@ -41,18 +41,16 @@ Juego::~Juego()
 {
     delete m_jugador;
     delete m_dic;
+    delete[] m_palabraOculta;
 }
 
 void Juego::mostrar()
 {
-    cout << m_palabraOculta << endl;
-    cout << m_palabra << endl;
-    cout << m_jugador->getVidas() << "/" << m_intentos << endl;
+    cout << m_palabraOculta << "      " << m_jugador->getVidas() << "/" << m_intentos << " intentos restantes"<< endl;
 }
 
 void Juego::actualizar()
 {   
-    cout << m_jugador->getNombre() << endl;
     cerrar();
 }
 
