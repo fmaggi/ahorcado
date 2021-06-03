@@ -32,9 +32,10 @@ Juego::Juego()
     m_dic = new Diccionario(m_nivel);
 
     m_palabra = m_dic->getPalabra();
-
-    m_palabraOculta = new char[m_palabra.length()];
+    
+    m_palabraOculta = new char[m_palabra.length() + 1];
     memset(m_palabraOculta, '-', m_palabra.length());
+    m_palabraOculta[m_palabra.length()] = '\0';
 }
 
 Juego::~Juego()
@@ -46,7 +47,8 @@ Juego::~Juego()
 
 void Juego::mostrar()
 {
-    cout << m_palabraOculta << "      " << m_jugador->getVidas() << "/" << m_intentos << " intentos restantes"<< endl;
+    cout << m_palabra << endl;
+    cout << m_palabraOculta << "      "  << endl << m_jugador->getVidas() << "/" << m_intentos << " intentos restantes"<< endl;
 }
 
 void Juego::actualizar()
