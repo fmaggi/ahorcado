@@ -17,7 +17,7 @@ public:
     /*
     *   Checkea si la letra ya fue usada o no por el jugador  
     *
-    *   @param letra Letra a checkear
+    *   @param letra Letra a checkear, debe ser en minusucula
     *   
     *   @returns true si la letra ya fue usada, false si no 
     */
