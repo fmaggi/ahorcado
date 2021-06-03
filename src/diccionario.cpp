@@ -1,12 +1,11 @@
 #include "diccionario.h"
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
 Diccionario::Diccionario(int nivel)
 {
-    m_palabra = "hola";
+    m_palabra = "palabra";
 }
 
 void Diccionario::agregarPalabra()

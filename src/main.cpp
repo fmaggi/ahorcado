@@ -20,6 +20,7 @@ int main()
 
     while(juego.estaCorriendo())
     {
+        juego.mostrar();
         juego.actualizar();
     }
 }
