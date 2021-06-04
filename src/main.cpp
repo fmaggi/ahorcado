@@ -1,6 +1,4 @@
 #include "juego.h"
-#include "diccionario.h"
-#include <iostream>
 
 using namespace std;
 
