@@ -12,6 +12,9 @@ public:
     Juego();
     ~Juego();
 
+    int init();
+    void empezarJuego();
+
     void mostrar();
     void actualizar();
 

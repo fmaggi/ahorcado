@@ -8,11 +8,11 @@ using namespace std;
 class Diccionario
 {
 public:
-    Diccionario(int nivel);
+    Diccionario();
 
-    string getPalabra();
+    string getPalabra(int nivel);
 
-    static void agregarPalabra();
+    void agregarPalabra();
 private:
     string m_palabra;
 };
