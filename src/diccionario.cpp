@@ -33,17 +33,14 @@ string Diccionario::getPalabra(int nivel)
     dic >> numberOfWords;
     srand(time(0));
     int index = rand() % numberOfWords + 1;
-    cout << "index " << index << endl;
 
     for (int i = 0; i < index; i++)
     {
         if (dic.eof())
             break;
         dic >> m_palabra;
-        cout << m_palabra << endl;
     }
     dic.close();
 
-    
     return m_palabra;
 }

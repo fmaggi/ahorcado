@@ -11,7 +11,7 @@ Juego::Juego()
     int m_nivel = 0;
     int m_intentos = 0;
 
-    string m_palabra = "";
+    m_palabra = "";
     m_palabraOculta = nullptr;
 
     m_jugador = nullptr;
@@ -22,7 +22,6 @@ Juego::~Juego()
 {
     if (m_jugador != nullptr)
         delete m_jugador;
-
 
     delete m_dic;
 
@@ -80,7 +79,6 @@ void Juego::empezarJuego()
 
 void Juego::mostrar()
 {
-    cout << m_palabra << endl;
     cout << m_palabraOculta << "      "  << endl << m_jugador->getVidas() << "/" << m_intentos << " intentos restantes"<< endl;
 }
 
