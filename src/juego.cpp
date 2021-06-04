@@ -12,7 +12,7 @@ Juego::Juego()
     int m_intentos = 0;
 
     string m_palabra = "";
-    char* m_palabraOculta = nullptr;
+    m_palabraOculta = nullptr;
 
     m_jugador = nullptr;
     m_dic = new Diccionario();
@@ -20,9 +20,14 @@ Juego::Juego()
 
 Juego::~Juego()
 {
-    delete m_jugador;
+    if (m_jugador != nullptr)
+        delete m_jugador;
+
+
     delete m_dic;
-    delete[] m_palabraOculta;
+
+    if (m_palabraOculta != nullptr)
+        delete[] m_palabraOculta;
 }
 
 int Juego::init()
