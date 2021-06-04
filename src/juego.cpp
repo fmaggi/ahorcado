@@ -6,10 +6,10 @@ using namespace std;
 
 Juego::Juego()
 {
-    bool m_estaCorriendo = false;
+    m_estaCorriendo = false;
 
-    int m_nivel = 0;
-    int m_intentos = 0;
+    m_nivel = 0;
+    m_intentos = 0;
 
     m_palabra = "";
     m_palabraOculta = nullptr;
