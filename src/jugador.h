@@ -17,6 +17,7 @@ public:
     *   Disminuye las vidas, para usar por si el jugador pierde una vida  
     */
     void operator--();
+    void perdioVida();
 
 
     /*

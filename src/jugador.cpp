@@ -20,6 +20,11 @@ void Jugador::operator--()
     --m_vidas;
 }
 
+void Jugador::perdioVida()
+{
+    --m_vidas;
+}
+
 string& Jugador::getNombre()
 {
     return m_nombre;
