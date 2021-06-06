@@ -12,7 +12,17 @@ public:
     Juego();
     ~Juego();
 
+    /*
+    *   Inicializa el juego. Le da la opcion al usuario de comenzar una partida o agregar una palabra al diccionario.
+    *   No se puede hacer en el constructor ya que devuleve un valor
+    * 
+    *   @returns Si el usuario decidio comenzar una partida o no. 
+    */
     int init();
+
+    /*
+    * Comienza la partida. Crea el jugador y pide la palabra al diccionario.
+    */
     void empezarJuego();
 
     void mostrar();
@@ -33,7 +43,7 @@ private:
     char* m_palabraOculta;
 
     Jugador* m_jugador;
-    Diccionario* m_dic;
+    Diccionario m_dic;
 };
 
 

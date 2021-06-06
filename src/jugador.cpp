@@ -15,6 +15,11 @@ int Jugador::getVidas()
     return m_vidas;
 }
 
+void Jugador::operator--()
+{
+    --m_vidas;
+}
+
 string& Jugador::getNombre()
 {
     return m_nombre;

@@ -13,6 +13,11 @@ public:
     string& getNombre();
     int getVidas();
 
+    /*
+    *   Disminuye las vidas, para usar por si el jugador pierde una vida  
+    */
+    void operator--();
+
 
     /*
     *   Checkea si la letra ya fue usada o no por el jugador  

@@ -15,15 +15,12 @@ Juego::Juego()
     m_palabraOculta = nullptr;
 
     m_jugador = nullptr;
-    m_dic = new Diccionario();
 }
 
 Juego::~Juego()
 {
     if (m_jugador != nullptr)
         delete m_jugador;
-
-    delete m_dic;
 
     if (m_palabraOculta != nullptr)
         delete[] m_palabraOculta;
@@ -37,7 +34,7 @@ int Juego::init()
     cin >> jugar;
     if (!jugar)
     {
-        m_dic->agregarPalabra();
+        m_dic.agregarPalabra();
         cout << "Para salir ingrese 0\nPara empezar una partida ingrese 1" << endl;
         cin >> jugar;
     }
@@ -70,7 +67,7 @@ void Juego::empezarJuego()
 
     m_jugador = new Jugador(nombre, m_intentos);
 
-    m_palabra = m_dic->getPalabra(m_nivel);
+    m_palabra = m_dic.getPalabra(m_nivel);
     
     m_palabraOculta = new char[m_palabra.length() + 1];
     memset(m_palabraOculta, '-', m_palabra.length());
@@ -79,11 +76,12 @@ void Juego::empezarJuego()
 
 void Juego::mostrar()
 {
-    cout << m_palabraOculta << "      "  << endl << m_jugador->getVidas() << "/" << m_intentos << " intentos restantes"<< endl;
+    cout << m_palabraOculta << endl << m_jugador->getVidas() << "/" << m_intentos << " intentos restantes"<< endl;
 }
 
 void Juego::actualizar()
 {   
+    --(*m_jugador);
     cerrar();
 }
 
