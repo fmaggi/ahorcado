@@ -12,7 +12,7 @@ Juego::Juego()
     m_intentos = 0;
 
     m_palabra = "";
-    m_palabraOculta = nullptr;
+    m_palabraOculta = "";
 
     m_jugador = nullptr;
 }
@@ -21,9 +21,6 @@ Juego::~Juego()
 {
     if (m_jugador != nullptr)
         delete m_jugador;
-
-    if (m_palabraOculta != nullptr)
-        delete[] m_palabraOculta;
 }
 
 int Juego::init()
@@ -69,19 +66,21 @@ void Juego::empezarJuego()
 
     m_palabra = m_dic.getPalabra(m_nivel);
     
-    m_palabraOculta = new char[m_palabra.length() + 1];
-    memset(m_palabraOculta, '-', m_palabra.length());
-    m_palabraOculta[m_palabra.length()] = '\0';
+    m_palabraOculta = m_palabra;
+    for (int i = 0; i < m_palabra.length(); i++)
+        m_palabraOculta[i] = '-';
 }
 
 void Juego::mostrar()
 {
+    cout << m_palabra << endl;
     cout << m_palabraOculta << endl << m_jugador->getVidas() << "/" << m_intentos << " intentos restantes"<< endl;
 }
 
 void Juego::actualizar()
 {   
     --(*m_jugador);
+
     if (m_jugador->perdio())
     {
         cout << "Se te acabaron los intentos " << m_jugador->getNombre() << endl; 

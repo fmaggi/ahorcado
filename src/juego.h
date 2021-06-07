@@ -40,7 +40,7 @@ private:
     int m_intentos;
 
     string m_palabra;
-    char* m_palabraOculta;
+    string m_palabraOculta;
 
     Jugador* m_jugador;
     Diccionario m_dic;
