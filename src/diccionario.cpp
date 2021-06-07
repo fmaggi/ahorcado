@@ -7,7 +7,20 @@ using namespace std;
 
 Diccionario::Diccionario()
 {   
+    m_path = "res/dicN.txt";
     m_palabra = "";
+}
+
+Diccionario::~Diccionario()
+{
+    m_dicFile.close();
+}
+
+void Diccionario::setNivel(int nivel)
+{
+    m_path[7] = '0' + nivel;
+
+    m_dicFile.open(m_path);
 }
 
 void Diccionario::agregarPalabra()
@@ -15,13 +28,9 @@ void Diccionario::agregarPalabra()
     cout << "Agregando palabra" << endl;
 }
 
-string Diccionario::getPalabra(int nivel)
-{
-    char path[] = "res/dicN.txt";
-    path[7] = '0' + nivel;
-
-    ifstream dic(path);
-    if (!dic.is_open())
+string Diccionario::getPalabra()
+{   
+    if (!m_dicFile.is_open())
     {   
         cout << "No se pudo abrir el diccionario" << endl;
         return "";
@@ -29,16 +38,15 @@ string Diccionario::getPalabra(int nivel)
 
     // Primera linea del diccionario te dice cuantas palabras hay en el diccionario
     int numberOfWords;
-    dic >> numberOfWords;
+    m_dicFile >> numberOfWords;
     srand(time(0));
     int index = rand() % numberOfWords + 1;
 
     for (int i = 0; i < index; i++)
     {
-        if (!dic.eof())
-            dic >> m_palabra;
+        if (!m_dicFile.eof())
+            m_dicFile >> m_palabra;
     }
-    dic.close();
 
     return m_palabra;
 }
