@@ -25,6 +25,11 @@ void Jugador::perdioVida()
     --m_vidas;
 }
 
+bool Jugador::perdio()
+{
+    return m_vidas == 0;
+}
+
 string& Jugador::getNombre()
 {
     return m_nombre;

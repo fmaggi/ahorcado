@@ -19,6 +19,8 @@ public:
     void operator--();
     void perdioVida();
 
+    bool perdio();
+
 
     /*
     *   Checkea si la letra ya fue usada o no por el jugador  

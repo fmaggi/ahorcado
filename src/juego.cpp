@@ -82,7 +82,11 @@ void Juego::mostrar()
 void Juego::actualizar()
 {   
     --(*m_jugador);
-    cerrar();
+    if (m_jugador->perdio())
+    {
+        cout << "Se te acabaron los intentos " << m_jugador->getNombre() << endl; 
+        cerrar();
+    }
 }
 
 bool Juego::estaCorriendo()
