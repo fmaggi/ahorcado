@@ -8,9 +8,12 @@ using namespace std;
 class Jugador
 {
 public:
-    Jugador(const string& nombre, int intentos);
+    Jugador();
 
+    void setNombre(const string& nombre);
     string& getNombre();
+
+    void setVidas(int vidas);
     int getVidas();
 
     /*

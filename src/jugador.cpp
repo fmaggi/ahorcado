@@ -3,11 +3,26 @@
 
 using namespace std;
 
-Jugador::Jugador(const string& nombre, int intentos)
+Jugador::Jugador()
 {   
-    m_vidas = intentos;
-    m_nombre = nombre;
+    m_vidas = 0;
+    m_nombre = "";
     memset(m_letrasArriesgadas, 0, 26);
+}
+
+void Jugador::setNombre(const string& nombre)
+{
+    m_nombre = nombre;
+}
+
+string& Jugador::getNombre()
+{
+    return m_nombre;
+}
+
+void Jugador::setVidas(int intentos)
+{
+    m_vidas = intentos;
 }
 
 int Jugador::getVidas()
@@ -28,11 +43,6 @@ void Jugador::perdioVida()
 bool Jugador::perdio()
 {
     return m_vidas == 0;
-}
-
-string& Jugador::getNombre()
-{
-    return m_nombre;
 }
 
 bool Jugador::letraUsada(char letra)
