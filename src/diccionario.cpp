@@ -11,16 +11,9 @@ Diccionario::Diccionario()
     m_palabra = "";
 }
 
-Diccionario::~Diccionario()
-{
-    m_dicFile.close();
-}
-
 void Diccionario::setNivel(int nivel)
 {
     m_path[7] = '0' + nivel;
-
-    m_dicFile.open(m_path);
 }
 
 void Diccionario::agregarPalabra()
@@ -30,6 +23,7 @@ void Diccionario::agregarPalabra()
 
 string Diccionario::getPalabra()
 {   
+    ifstream m_dicFile(m_path);
     if (!m_dicFile.is_open())
     {   
         cout << "No se pudo abrir el diccionario" << endl;
@@ -47,6 +41,7 @@ string Diccionario::getPalabra()
         if (!m_dicFile.eof())
             m_dicFile >> m_palabra;
     }
+    m_dicFile.close();
 
     return m_palabra;
 }

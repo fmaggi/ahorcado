@@ -2,7 +2,6 @@
 #define DICCIONARIO_H_INCLUDED
 
 #include <string>
-#include <fstream>
 
 using namespace std;
 
@@ -20,7 +19,6 @@ public:
 private:
     string m_palabra;
 
-    ifstream m_dicFile;
     string m_path;
 };
 
