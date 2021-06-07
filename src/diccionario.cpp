@@ -17,7 +17,7 @@ void Diccionario::agregarPalabra()
 
 string Diccionario::getPalabra(int nivel)
 {
-    char path[] = {"res/dicN.txt"};
+    char path[] = "res/dicN.txt";
     path[7] = '0' + nivel;
 
     ifstream dic(path);
@@ -35,9 +35,8 @@ string Diccionario::getPalabra(int nivel)
 
     for (int i = 0; i < index; i++)
     {
-        if (dic.eof())
-            break;
-        dic >> m_palabra;
+        if (!dic.eof())
+            dic >> m_palabra;
     }
     dic.close();
 
