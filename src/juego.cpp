@@ -49,52 +49,55 @@ void Juego::mostrar()
 
 void Juego::actualizar()
 {   
-    --m_jugador;
-	
 	cout << "Ingrese la letra o palabra para adivinar" << endl;
 	cin >> m_input;
+
+	if (m_input.length() > 1)
+		checkPalabra(m_input);
+	else
+		checkLetra(m_input[0]);
 	
-	while(m_jugador.letraUsada(m_input)){
-		cout << "La letra ya fue usada, elija otra" << endl;
-		cin >> m_input;
-	}
-	
-	if (m_input.length() > 1){
-		if(m_input == m_palabra){
-			m_jugador.setVidas(-1);
+    if (m_jugador.getEstado() != Estado::jugando) // estado puede ser jugando, gano o perdio
+	{
+		if (m_jugador.getEstado() == Estado::gano)
+			cout << "Felicitaciones " << m_jugador.getNombre() << ", ganaste!" << endl;
+		else
+		{
+			cout << "Perdiste " << m_jugador.getNombre() << "! :(" << endl;
+			cout << "La palabra era " << m_palabra << endl;
 		}
-		else{
-			m_jugador.setVidas(0);
-		}
-	};
-	
-	if(m_palabra.find(m_input) != string::npos){
-		for(int i = 0; i < m_palabra.length(); i++){
-			if(m_palabra[i] == m_input[0]){
-				m_palabraOculta[i] = m_palabra[i];
-			}
-		}
+		cerrar();
 	}
-	
-	else{
-		cout << "Letra Incorrecta!" <<endl;
+}
+
+void Juego::checkLetra(char letra)
+{
+	bool adivino = false;
+	if (m_jugador.letraUsada(letra))
+	{
+		cout << "Ya usaste esta letra!" << endl;
+		return;
 	}
-	
-	if(m_palabraOculta == m_palabra){
-		m_jugador.setVidas(-1);
-	}
-	
-    if (m_jugador.getVidas() <= 0)
-    {
-		if (m_jugador.getVidas() == 0){
-			cout << "Se te acabaron los intentos " << m_jugador.getNombre() << endl; 
-			cerrar();
-		}
-		else{
-			cout << "Felicidades " << m_jugador.getNombre() << ". Ganaste!!!!" <<endl;
-			cerrar();
+	for (int i = 0; i < m_palabra.length(); i++)
+	{
+		if (letra == m_palabra[i])
+		{	
+			adivino = true;
+			m_palabraOculta[i] = letra;
+			if (m_palabraOculta == m_palabra)
+				m_jugador.setEstado(Estado::gano);
 		}
 	}
+	if (!adivino)
+		--m_jugador;
+}
+
+void Juego::checkPalabra(string palabra)
+{
+	if (palabra == m_palabra)
+		m_jugador.setEstado(Estado::gano);
+	else
+		m_jugador.setEstado(Estado::perdio);
 }
 
 bool Juego::estaCorriendo()

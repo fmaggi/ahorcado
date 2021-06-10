@@ -11,6 +11,4 @@ int main()
         juego.mostrar();
         juego.actualizar();
     }
-
-    //juego.mostrarResultado(); o algo asi
 }

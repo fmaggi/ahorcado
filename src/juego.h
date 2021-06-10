@@ -17,7 +17,8 @@ public:
     bool estaCorriendo();
     void cerrar();
 
-    bool checkLetra(char letra);
+    void checkLetra(char letra);
+    void checkPalabra(string palabra);
 
 private:
     bool m_estaCorriendo;
@@ -28,6 +29,8 @@ private:
     string m_palabra;
     string m_palabraOculta;
 	string m_input;
+
+    string m_resultado;
 	
     Jugador m_jugador;
     Diccionario m_dic;

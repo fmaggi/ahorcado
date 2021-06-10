@@ -5,6 +5,13 @@
 
 using namespace std;
 
+enum struct Estado
+{
+    gano = -1,
+    perdio = 0,
+    jugando = 1
+};
+
 class Jugador
 {
 public:
@@ -15,17 +22,15 @@ public:
 
     void setVidas(int vidas);
     int getVidas();
-	char* getLetras();
-	
+
+    void setEstado(Estado estado);
+    Estado getEstado();
 	
     /*
     *   Disminuye las vidas, para usar por si el jugador pierde una vida  
     */
     void operator--();
     void perdioVida();
-
-    bool perdio();
-
 
     /*
     *   Checkea si la letra ya fue usada o no por el jugador  
@@ -35,11 +40,13 @@ public:
     *   @returns true si la letra ya fue usada, false si no 
     */
     bool letraUsada(string letra);
+    bool letraUsada(char letra);
 	
 private:
     bool m_letrasArriesgadas[26];
 
     int m_vidas;
+    Estado m_estado;
     string m_nombre;
 };
 
