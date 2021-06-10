@@ -70,7 +70,7 @@ string Diccionario::getPalabra()
     if (!m_dicFile.is_open())
     {   
         cout << "No se pudo abrir el diccionario" << endl;
-        cout << "En este directorio cree una carpeta 'res' y ponga los diccionarios adentro" << endl;
+        cout << "Utilice el programa del diccionario para generarlos" << endl;
         return "";
     }
 

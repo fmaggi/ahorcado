@@ -36,6 +36,8 @@ Juego::Juego()
 
     m_dic.setNivel(m_nivel);
     m_palabra = m_dic.getPalabra();
+	if (m_palabra == "")
+		cerrar();
     
     m_palabraOculta = m_palabra;
     for (int i = 0; i < m_palabra.length(); i++)
@@ -95,7 +97,7 @@ void Juego::mostrarResultado()
 {
 	if (m_jugador.getEstado() == Estado::gano)
 		cout << "Felicitaciones " << m_jugador.getNombre() << ", ganaste!" << endl;
-	else
+	else if (m_jugador.getEstado() == Estado::perdio)
 	{
 		cout << "Perdiste " << m_jugador.getNombre() << "! :(" << endl;
 		cout << "La palabra era " << m_palabra << endl;
