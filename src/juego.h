@@ -27,7 +27,8 @@ private:
 
     string m_palabra;
     string m_palabraOculta;
-
+	string m_input;
+	
     Jugador m_jugador;
     Diccionario m_dic;
 };

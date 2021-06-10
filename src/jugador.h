@@ -15,7 +15,9 @@ public:
 
     void setVidas(int vidas);
     int getVidas();
-
+	char* getLetras();
+	
+	
     /*
     *   Disminuye las vidas, para usar por si el jugador pierde una vida  
     */
@@ -32,7 +34,8 @@ public:
     *   
     *   @returns true si la letra ya fue usada, false si no 
     */
-    bool letraUsada(char letra);
+    bool letraUsada(string letra);
+	
 private:
     bool m_letrasArriesgadas[26];
 

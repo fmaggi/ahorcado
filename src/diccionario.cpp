@@ -11,6 +11,10 @@ Diccionario::Diccionario()
     m_palabra = "";
 }
 
+Diccionario::~Diccionario()
+{   
+}
+
 void Diccionario::setNivel(int nivel)
 {
     m_path[7] = '0' + nivel;

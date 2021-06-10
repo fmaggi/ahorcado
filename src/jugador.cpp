@@ -45,9 +45,14 @@ bool Jugador::perdio()
     return m_vidas == 0;
 }
 
-bool Jugador::letraUsada(char letra)
+bool Jugador::letraUsada(string letra)
 {
-    int index = letra - 'a';
+	char temp;
+	if (letra.length() > 1){
+		return false;
+	}
+	temp = letra[0];
+    int index = temp - 'a';
     if (!(m_letrasArriesgadas[index]))
     {
         m_letrasArriesgadas[index] = true;
