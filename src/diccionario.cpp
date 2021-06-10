@@ -39,7 +39,7 @@ void Diccionario::agregarPalabra(const string& palabra)
         numeroDepalabras = 0;
     else
         in >> numeroDepalabras;
-        
+
     ofstream temp("res/temp.txt");
     if (!temp.is_open())
     {
@@ -70,6 +70,7 @@ string Diccionario::getPalabra()
     if (!m_dicFile.is_open())
     {   
         cout << "No se pudo abrir el diccionario" << endl;
+        cout << "En este directorio cree una carpeta 'res' y ponga los diccionarios adentro" << endl;
         return "";
     }
 
