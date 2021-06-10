@@ -21,7 +21,11 @@ dir:
 
 clean:
 	@echo cleaning
-	@rm -rf ./obj ahorcado
+	@rm -rf ./obj ahorcado dic
+
+dic: $(OBJ)diccionario.o $(OBJ)main_dic.o
+	$(CC) -I $(INC) -o $@ $^
+
 
 run: dir $(TARGET)
 	@echo [RUN] $(TARGET)

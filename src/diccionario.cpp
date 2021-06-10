@@ -20,9 +20,48 @@ void Diccionario::setNivel(int nivel)
     m_path[7] = '0' + nivel;
 }
 
-void Diccionario::agregarPalabra()
+void Diccionario::agregarPalabra(const string& palabra)
 {
-    cout << "Agregando palabra" << endl;
+    int nivel;
+    if (palabra.length() <= 7)
+        nivel = 1;
+    else if (palabra.length() <= 11)
+        nivel = 2;
+    else 
+        nivel = 3;
+
+    m_path[7] = '0' + nivel;
+
+    int numeroDepalabras;
+
+    ifstream in(m_path);
+    if (!in.is_open())
+        numeroDepalabras = 0;
+    else
+        in >> numeroDepalabras;
+        
+    ofstream temp("res/temp.txt");
+    if (!temp.is_open())
+    {
+        cout << "Ha habido un error" << endl;
+        return;
+    }
+    
+    numeroDepalabras++;
+    temp << numeroDepalabras;
+    temp << '\n';
+
+    string line;
+    while (in >> line)
+    {
+        line += '\n';
+        temp << line;
+    }
+    temp << palabra;
+
+    temp.close();
+    in.close();
+    rename("res/temp.txt", m_path.c_str());
 }
 
 string Diccionario::getPalabra()

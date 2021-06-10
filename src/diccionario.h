@@ -15,7 +15,7 @@ public:
 
     string getPalabra();
 
-    void agregarPalabra();
+    void agregarPalabra(const string& palabra);
 private:
     string m_palabra;
 

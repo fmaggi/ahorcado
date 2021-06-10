@@ -1,5 +1,8 @@
-4
+7
 palabra
 francisco
 computadora
 programacion
+tomate
+hola
+jesus
