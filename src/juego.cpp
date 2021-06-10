@@ -58,16 +58,7 @@ void Juego::actualizar()
 		checkLetra(m_input[0]);
 	
     if (m_jugador.getEstado() != Estado::jugando) // estado puede ser jugando, gano o perdio
-	{
-		if (m_jugador.getEstado() == Estado::gano)
-			cout << "Felicitaciones " << m_jugador.getNombre() << ", ganaste!" << endl;
-		else
-		{
-			cout << "Perdiste " << m_jugador.getNombre() << "! :(" << endl;
-			cout << "La palabra era " << m_palabra << endl;
-		}
 		cerrar();
-	}
 }
 
 void Juego::checkLetra(char letra)
@@ -98,6 +89,17 @@ void Juego::checkPalabra(string palabra)
 		m_jugador.setEstado(Estado::gano);
 	else
 		m_jugador.setEstado(Estado::perdio);
+}
+
+void Juego::mostrarResultado()
+{
+	if (m_jugador.getEstado() == Estado::gano)
+		cout << "Felicitaciones " << m_jugador.getNombre() << ", ganaste!" << endl;
+	else
+	{
+		cout << "Perdiste " << m_jugador.getNombre() << "! :(" << endl;
+		cout << "La palabra era " << m_palabra << endl;
+	}
 }
 
 bool Juego::estaCorriendo()

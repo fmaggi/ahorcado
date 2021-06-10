@@ -20,6 +20,8 @@ public:
     void checkLetra(char letra);
     void checkPalabra(string palabra);
 
+    void mostrarResultado();
+
 private:
     bool m_estaCorriendo;
 
