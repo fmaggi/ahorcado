@@ -1,8 +1,6 @@
 #include "juego.h"
 #include <iostream>
 #include <cstring>
-#include <cmath>
-
 
 using namespace std;
 
@@ -54,10 +52,14 @@ void Juego::actualizar()
 	cout << "Ingrese la letra o palabra para adivinar" << endl;
 	cin >> m_input;
 
+	for (int i = 0; i < m_input.length(); i++)
+		m_input[i] = tolower(m_input[i]);
+
+
 	if (m_input.length() > 1)
 		checkPalabra(m_input);
 	else
-		checkLetra(m_input[0]);
+		checkLetra((m_input[0]));
 	
     if (m_jugador.getEstado() != Estado::jugando) // estado puede ser jugando, gano o perdio
 		cerrar();
