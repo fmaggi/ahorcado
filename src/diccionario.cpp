@@ -44,6 +44,7 @@ void Diccionario::agregarPalabra(const string& palabra)
     if (!temp.is_open())
     {
         cout << "Ha habido un error" << endl;
+        cout << "Cree una cerpeta 'res' en este directorio" << endl;
         return;
     }
     
